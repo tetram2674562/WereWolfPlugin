@@ -1,7 +1,6 @@
 package fr.ph1lou.werewolfplugin.worldloader;
 
 import fr.ph1lou.werewolfapi.versions.VersionUtils;
-import io.papermc.lib.PaperLib;
 import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
 import org.bukkit.Server;
@@ -399,7 +398,7 @@ public class WorldFillTask implements Runnable {
     }
 
     private CompletableFuture<Void> getPaperLibChunk(World world, int x, int z, boolean gen) {
-        return PaperLib.getChunkAtAsync(world, x, z, gen).thenAccept((Chunk chunk) ->
+        return world.getChunkAtAsync( x, z, gen).thenAccept((Chunk chunk) ->
         {
             if (chunk != null) {
                 // toggle "force loaded" flag on for chunk to prevent it from being unloaded while we need it

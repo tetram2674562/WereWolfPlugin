@@ -18,7 +18,7 @@ import fr.ph1lou.werewolfplugin.game.GameManager;
 import fr.ph1lou.werewolfplugin.game.MapManager;
 import fr.ph1lou.werewolfplugin.statistiks.StatisticsEvents;
 import fr.ph1lou.werewolfplugin.statistiks.StatistiksUtils;
-import org.apache.commons.lang.NotImplementedException;
+import org.apache.commons.lang3.NotImplementedException;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.ServicePriority;
@@ -57,7 +57,7 @@ public class Main extends JavaPlugin implements GetWereWolfAPI {
 
     @Override
     public List<GameReview> loadPreviousGames() {
-        throw new NotImplementedException();
+        return List.of();
     }
 
     @Override
